@@ -3,26 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour, IDropHandler
+public class DressItemSlot : MonoBehaviour, IDropHandler
 {
+    public InventoryManager inventory;
     [SerializeField] private bool isTrash;
-    private GameObject item;
+    private GameObject gameItem;
  
     public void OnDrop(PointerEventData eventData) {
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null) {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            var item = eventData.pointerDrag.GetComponent<Item>();
+            /*if (item) {
+                inventory.AddItem(item.item, 1);
+            }*/
         }
         if (isTrash == true) {
             Debug.Log("Delete");
-            item = eventData.pointerDrag.gameObject;
+            gameItem = eventData.pointerDrag.gameObject;
             StartCoroutine(WaitBeforeDestroyRoutine(.5f));
         }
     }
 
     public void DestroyItem() {
-        if (item != null) {
-           Destroy(item); 
+        if (gameItem != null) {
+           Destroy(gameItem); 
         }
     }
 
