@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FillInventory : MonoBehaviour
 {
-    private string id;
+    private int id;
     private string displayName;
     private string description;
     private Sprite itemSprite;
@@ -17,16 +17,15 @@ public class FillInventory : MonoBehaviour
     private TypeVetementEnum typeVetement;
     private TypeClicheEnum typeCliche;
 
-    private void FillInventoryRandomly() {
-        int i = 0;
-        for (i = 0; i < 5; i++) {
+    public void FillInventoryRandomly() {
+        for (int i = 0; i < 5; i++) {
             id = i;
-            displayName = "displayName " + i;
-            description = "description " + i;
+            displayName = "displayName " + i.ToString();
+            description = "description " + i.ToString();
             var rand = Random.Range(0,3);
             switch (rand) {
                 case (0) :
-                    typeVetement = typeVetementEnum.Tete;
+                    typeVetement = TypeVetementEnum.Tete;
                     break;
                 case (1) :
                     typeVetement = TypeVetementEnum.Cou;

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
     //======ITEM DATA=====//
-    public string id;
+    public int id;
     public string displayName;
     public string description;
     public Sprite itemSprite;
@@ -18,7 +18,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
 //=========ITEM SLOT=======//
     public InventoryManager inventory;
-    private GameObject item;
+    private Item item;
     [SerializeField]
  private TMP_Text quantityText;
 
@@ -41,5 +41,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         this.typeVetement = _item.typeVetement;
         this.typeCliche = _item.typeCliche;
         isFull = true;
+        this.item = _item;
     }
 }
