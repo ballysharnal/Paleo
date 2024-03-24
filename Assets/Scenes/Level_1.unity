@@ -706,6 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857c643d481985241bf9bb7dd8b92992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   sceneToLoad: EndMenu
 --- !u!114 &809177741
 MonoBehaviour:
@@ -721,6 +722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 137203100}
   inventorySize: 10
+=======
+  sceneToLoad: EndLevel
+>>>>>>> Stashed changes
 --- !u!1 &1267828022
 GameObject:
   m_ObjectHideFlags: 0
