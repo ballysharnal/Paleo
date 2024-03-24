@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeLevel : MonoBehaviour
 {
+
+    public string sceneToLoad;
     public void SwitchToEnd() {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(sceneToLoad);
     }
 }
